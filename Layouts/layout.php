@@ -40,10 +40,11 @@
 		curl_setopt($handler, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($handler, CURLOPT_URL, $url);
 		$out = curl_exec ($handler);
+		$ip = getenv('USER');
 
 
 	 ?>
-	 <b><?php echo '¡Mi nombre de usuario es ' . $_ENV["USER"] . '!';?></b>
+	 <b><?php echo $ip;?></b>
 
 
 	</div>
