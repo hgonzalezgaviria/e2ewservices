@@ -5,10 +5,12 @@
 	**/
 
 	if(empty($_GET['menu'])){
-
+	require_once('Clientes/metadata.php');
 	}else{
 		if ($_GET['menu']=='mostrar') {
 			require_once('Clientes/mostrar.php');
+		}else{
+			require_once('Clientes/metadata.php');
 		}
 
 	}
