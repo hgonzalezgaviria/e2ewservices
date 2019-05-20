@@ -41,8 +41,9 @@
 		curl_setopt($handler, CURLOPT_URL, $url);
 		$out = curl_exec ($handler);
 
+
 	 ?>
-	 <b><?php echo 	$out; ?></b>
+	 <b><?php echo '¡Mi nombre de usuario es ' . $_ENV["USER"] . '!';?></b>
 
 
 	</div>
