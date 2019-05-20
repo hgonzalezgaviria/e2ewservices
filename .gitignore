@@ -2,7 +2,7 @@
 # Created by https://www.gitignore.io/api/bower,macos,windows
 # Edit at https://www.gitignore.io/?templates=bower,macos,windows
 
-logs/*
+logs/_h5ai/*
 
 ### Bower ###
 bower_components
