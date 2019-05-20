@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="?menu=metadata">
+			<a class="navbar-brand" href="/">
 			<span class="glyphicon glyphicon-cloud" aria-hidden="true" ></span>
 			e2ew
 			</a>
