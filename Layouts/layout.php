@@ -21,23 +21,35 @@
 </head>
 <body>
 <header>
-	<?php 
+	<?php
 		require_once('header.php');
-	?>	
+	?>
 </header>
 
-<section>	
+<section>
 	<div class="container">
-	<?php 
+	<?php
 			// carga el archivo routing.php para direccionar a la página .php que se incrustará entre la header y el footer
 			require_once('routing.php');
+			$varurl='hola';
+			$url = "http://169.254.169.254/latest/meta-data/ami-id";
+
+		$handler = curl_init();
+		curl_setopt($handler, CURLOPT_HEADER, true);
+		curl_setopt ($handler, CURLOPT_POST, 1);
+		curl_setopt($handler, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($handler, CURLOPT_URL, $url);
+		$out = curl_exec ($handler);
+
 	 ?>
+	 <b><?php echo 	$out; ?></b>
+
 
 	</div>
 </section>
 
 <footer >
-	<?php 
+	<?php
 		include_once('footer.php');
 	?>
 </footer>
