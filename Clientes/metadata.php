@@ -13,7 +13,7 @@ $equipo=	$array = [
 		"urlippub" => "http://e2ew.inttegrio-aws.com/mBank/services/servicesMB?wsdl", //IP publica v4
 ];
 */
-$ip= function($urlip);
+$ip= metadatos($urlip);
 
 function metadatos($url){
 	$handler = curl_init();
