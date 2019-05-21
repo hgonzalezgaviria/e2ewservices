@@ -8,6 +8,7 @@
 </script>
 
 <?php
+
 	require_once('estados/eic.php');
 	require_once('estados/e2di.php');
 	require_once('estados/bmi.php');

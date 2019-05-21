@@ -2,8 +2,8 @@
 
 $estmbank='Inactivo';
 $estEAImbank='Inactivo';
-$urlmbank='http://e2ew.inttegrio-aws.com/mBank/services/servicesMB?wsdl';
-$urlStateMbank='http://e2ew.inttegrio-aws.com/mBank/servlet/Status';
+$urlmbank='http://'.$ip.':8080/mBank/services/servicesMB?wsdl';
+$urlStateMbank='http://'.$ip.':8080/mBank/servlet/Status';
 $content="";
 
 

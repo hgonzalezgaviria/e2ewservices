@@ -2,8 +2,8 @@
 
 $este2di='Inactivo';
 $estEAIe2di='Inactivo';
-$urle2di='http://e2ew.inttegrio-aws.com/e2di_web/services/servicesNCVP?wsdl';
-$urlStateE2di='http://e2ew.inttegrio-aws.com/e2di_web/servlet/Status';
+$urle2di='http://'.$ip.':8080/e2di_web/services/servicesNCVP?wsdl';
+$urlStateE2di='http://'.$ip.':8080/e2di_web/servlet/Status';
 $content="";
 
 

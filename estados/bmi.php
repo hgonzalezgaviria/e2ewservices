@@ -1,9 +1,8 @@
 <?php
-
 $estbmi='Inactivo';
 $estEAIbmi='Inactivo';
-$urlbmi='http://e2ew.inttegrio-aws.com/bmi/services/servicesBMI?wsdl';
-$urlStateBmi='http://e2ew.inttegrio-aws.com/bmi/servlet/State';
+$urlbmi='http://'.$ip.':8080/bmi/services/servicesBMI?wsdl';
+$urlStateBmi='http://'.$ip.':8080/bmi/servlet/State';
 $content="";
 
 /*
