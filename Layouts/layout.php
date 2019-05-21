@@ -18,6 +18,13 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="bootstrap/js/mydialogo.js"></script>
+	<script type="text/javascript">
+	var URLactualL = jQuery(location).attr('href');
+	//alert(URLactualL);
+	var URLdomain = window.location.host;
+	//alert(URLdomain);
+	</script>
+
 </head>
 <body>
 <header>

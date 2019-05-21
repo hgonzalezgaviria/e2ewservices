@@ -15,8 +15,8 @@ require_once('Clientes/metadata.php');
 		 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">App
 		 				<span class="caret"></span></a>
 		 				<ul class="dropdown-menu">
-			 				<li> <a href="http://<?php echo $ip;?>:8080/EICW/initAppn1.start()" target="_blank">EIC</a></li>
-			 				<li><a href="http://e2ew.inttegrio-aws.com/bmi/appn1.init()" target="_blank">BMI</a></li>
+			 				<li> <a href="<?php echo $enlace_actual;?>/EICW/initAppn1.start()" target="_blank">EIC</a></li>
+			 				<li><a href="<?php echo $enlace_actual;?>/bmi/appn1.init()" target="_blank">BMI</a></li>
 		 			</ul>
 	 </li>
 				</li>
