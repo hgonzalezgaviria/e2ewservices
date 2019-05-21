@@ -6,7 +6,7 @@ $estEICEAI='Inactivo';
 $url='http://'.$ip.':8080/EICW/services/servicesEIC?wsdl';
 $urlState='http://'.$ip.':8080/EICW/servlet/StateEIC';
 $content="";
-echo $url;
+//echo $url;
 
 //ping
 function get_http_response_code($url) {

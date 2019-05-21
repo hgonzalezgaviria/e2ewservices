@@ -16,7 +16,10 @@
 ?>
 <h1>Estado de Aplicaciones</h1>
 <div class="container">
-	    <div class="row">
+		    <div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<p><?php echo $ip;?></p>
+					</div>
 	<div class="col-md-8 col-md-offset-2">
 				<div class="card">
 				<div class="card-body d-flex justify-content-between align-items-center">
