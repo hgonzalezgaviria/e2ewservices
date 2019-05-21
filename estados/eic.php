@@ -1,11 +1,12 @@
 <?php
 
+require_once('Clientes/metadata.php');
 $estado='Inactivo';
 $estEICEAI='Inactivo';
-$url='http://e2ew.inttegrio-aws.com/EICW/services/servicesEIC?wsdl';
-$urlState='http://e2ew.inttegrio-aws.com/EICW/servlet/StateEIC';
+$url='http://'.$out.':8080/EICW/services/servicesEIC?wsdl';
+$urlState='http://'.$out.':8080/EICW/servlet/StateEIC';
 $content="";
-
+echo $url;
 
 //ping
 function get_http_response_code($url) {

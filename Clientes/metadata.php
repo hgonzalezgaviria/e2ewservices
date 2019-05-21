@@ -13,11 +13,3 @@
 		//$ip = getenv('USER');
 		//$ip = $_SERVER['USER'];
  ?>
- 
-<h3>Instancia</h3>
-<div class="container">
-	    <div class="row">
-		<b>IP: </b>
-		<b><?php echo $out;?></b>
-		</div>
-</div>
