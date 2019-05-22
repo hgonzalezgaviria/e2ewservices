@@ -9,6 +9,8 @@
 	}else{
 		if ($_GET['menu']=='mostrar') {
 			require_once('Clientes/mostrar.php');
+		}else if ($_GET['menu']=='panel') {
+			require_once('Clientes/panel.php');
 		}else{
 			require_once('Clientes/metadata.php');
 		}

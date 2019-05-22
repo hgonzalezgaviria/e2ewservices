@@ -2,10 +2,15 @@
 $urlip= "http://169.254.169.254/latest/meta-data/local-ipv4"; //IP privada v4
 $urlzone = "http://169.254.169.254/latest/meta-data/placement/availability-zone"; //La zona de disponibilidad en la que se ha lanzado la instancia.
 $urlippub = "http://169.254.169.254/latest/meta-data/public-ipv4"; //IP publica v4
+$urlInstaId = "http://169.254.169.254/latest/meta-data/instance-id"; //IP publica v4
+$urlInstaType = "http://169.254.169.254/latest/meta-data/instance-type"; //IP publica v4
 
 $ip= curlMetadatos($urlip);
 $ippub= curlMetadatos($urlippub);
 $zone= curlMetadatos($urlzone);
+$insid= curlMetadatos($urlInstaId);
+$instype= curlMetadatos($urlInstaType);
+
 
 function curlMetadatos($url){
 	$handler = curl_init();

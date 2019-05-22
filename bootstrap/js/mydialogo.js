@@ -2,7 +2,12 @@ function myModal(urlApp) {
 		$("#modalContent1")[0].src = urlApp;
 		$("#modalContent1").css("min-height", "48rem");
 		$("#myModalDialog1").addClass("modal-lg");		
-		$('#miModal .modal-title').html('<b>Estado de App</b>');		
+		if (urlApp=='logs/'){
+			$('#miModal .modal-title').html('<b>Logs e2ew</b>');		
+		}else{
+			$('#miModal .modal-title').html('<b>Estado de App</b>');		
+		}
+		
 		setTimeout(function() { $('#miModal').modal('show'); }, 500);
 }
 
@@ -47,8 +52,7 @@ $(document).ready(function(){
 
    });
 
-   $('#searchBtn_logs').off('click').click(function(){
-       var student_num = $('input[name="student_number"]').val();
+   $('#searchBtn_logs').off('click').click(function(){       
 
 	    //$('#universalModal').modal('show');
 		$("#modalContent")[0].src = './logs/';

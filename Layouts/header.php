@@ -17,6 +17,7 @@ require_once('Clientes/metadata.php');
 		 				<ul class="dropdown-menu">
 			 				<li> <a href="<?php echo $enlace_actual;?>/EICW/initAppn1.start()" target="_blank">EIC</a></li>
 			 				<li><a href="<?php echo $enlace_actual;?>/bmi/appn1.init()" target="_blank">BMI</a></li>
+							<li><a href="?menu=panel">Ins</a></li>
 		 			</ul>
 	 </li>
 				</li>
