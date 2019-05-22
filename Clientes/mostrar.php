@@ -49,7 +49,7 @@
 					<th>Aplicación</th>
 					<th>Estado Ping</th>
 					<th>Estado EAI</th>
-					<th>wsdl</th>
+					<th>status</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,28 +57,31 @@
 					<td>EIC</td>
 					<td><?php echo $estado;?></td>
 					<td><?php echo $estEICEAI;?></td>
-					<td><a href="<?php echo $enlace_actual;?>/EICW/services/servicesEIC?wsdl" target="_blank">View</td>
+					<!--td><a href="<?php //echo $enlace_actual;?>/EICW/services/servicesEIC?wsdl" target="_blank">View</td-->
+					<td><a href="javascript:myModal('<?php echo $enlace_actual;?>/EICW/servlet/StateEIC');">View</td>
+					<!--td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#miModal">
+					Abrir modal</button></td-->				
+					<!--td><a data-toggle="modal" data-target="#miModal" id="searchBtn_views" >Logs</a></td-->
 						<!--<td> <button type="button" class="btn btn-primary">Actualizar</button></td>
-							<td><button type="button" class="btn btn-primary" >Eliminar</button></td>
-						-->
+							<td><button type="button" class="btn btn-primary" >Eliminar</button></td-->
 				</tr>
 				<tr>
 					<td>E2DI</td>
 					<td><?php echo $este2di;?></td>
 					<td><?php echo $estEAIe2di;?></td>
-					<td><a href="<?php echo $enlace_actual;?>/e2di_web/services/servicesNCVP?wsdl" target="_blank">View</td>
+					<td><a href="javascript:myModal('<?php echo $enlace_actual;?>/e2di_web/servlet/Status');">View</td>					
 				</tr>
 				<tr>
 					<td>BMI</td>
 					<td><?php echo $estbmi;?></td>
 					<td><?php echo $estEAIbmi;?></td>
-					<td><a href="<?php echo $enlace_actual;?>/bmi/services/servicesBMI?wsdl" target="_blank">View</td>
+					<td><a href="javascript:myModal('<?php echo $enlace_actual;?>/bmi/servlet/State');">View</td>					
 				</tr>
 				<tr>
 					<td>MBANK</td>
 					<td><?php echo $estmbank;?></td>
 					<td><?php echo $estEAImbank;?></td>
-					<td><a href="<?php echo $enlace_actual;?>/mBank/services/servicesMB?wsdl" target="_blank">View</td>
+					<td><a href="javascript:myModal('<?php echo $enlace_actual;?>/mBank/servlet/Status');">View</td>					
 				</tr>
 			</tbody>
 		</table>
@@ -87,4 +90,20 @@
 </div>
 	</div>
 		</div>
+</div>
+
+<div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="width:1000px;" id='myModalDialog1' role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Estados</h4>
+			</div>
+			<div class="modal-body">				
+				<iframe id="modalContent1" frameborder="0" style="width: 100%; min-height: 30rem;"></iframe>
+			</div>
+		</div>
+	</div>
 </div>

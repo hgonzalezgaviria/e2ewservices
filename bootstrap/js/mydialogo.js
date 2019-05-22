@@ -1,3 +1,28 @@
+function myModal(urlApp) {
+		$("#modalContent1")[0].src = urlApp;
+		$("#modalContent1").css("min-height", "48rem");
+		$("#myModalDialog1").addClass("modal-lg");		
+		$('#miModal .modal-title').html('<b>Estado de App</b>');		
+		setTimeout(function() { $('#miModal').modal('show'); }, 500);
+}
+
+function accion()
+    {
+        $.ajax({
+            type:'POST', //aqui puede ser igual get
+            url: 'Clientes/cleanlogs.php',//aqui va tu direccion donde esta tu funcion php
+            //data: {id:1,otrovalor:'valor'},//aqui tus datos
+            success:function(data){
+                //lo que devuelve tu archivo mifuncion.php
+				//alert('ok');
+           },
+           error:function(data){
+            //lo que devuelve si falla tu archivo mifuncion.php
+			//alert('NO-ok');
+           }
+         });
+    }
+
 $(document).ready(function(){
 
    $('#universalModal form').submit(function (event){
@@ -37,4 +62,29 @@ $(document).ready(function(){
 
 
    });
+   /*
+ var URLdomain = window.location.host;
+ var portGlass = ':8080';
+ if (URLdomain == 'e2ew.inttegrio-aws.com'){
+var URLdomain = window.location.host;	 
+ }else{
+	 var URLdomain = window.location.host;
+	 var URLdomain = URLdomain.concat(portGlass);
+ }
+     $('#searchBtn_views').off('click').click(function(){       
+
+	    //$('#universalModal').modal('show');
+		$("#modalContent1")[0].src = 'http://'+URLdomain+'/EICW/services/servicesEIC?wsdl';
+		$("#modalContent1").css("min-height", "48rem");
+		$("#myModalDialog1").addClass("modal-lg");		
+		$('#miModal .modal-title').html('<b>Logs e2ew</b>');		
+		setTimeout(function() { $('#miModal').modal('show'); }, 500);
+//       $('#universalModal').modal('show');       
+       //$('#universalModal .modal-body').html($('#searchResultForm').val());
+       $('#miModal .modal-footer button#submitBtn').html('Save and Exit');
+
+
+   });
+   */
 });
+

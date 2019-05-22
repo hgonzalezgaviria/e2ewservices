@@ -22,10 +22,16 @@ require_once('Clientes/metadata.php');
 				</li>
 				<li>
 					<a href="?menu=mostrar">Ver Estados</a>
-				</li>
-				<li>
-					<a  data-toggle="modal" data-target="#universalModal" id="searchBtn_logs" >Logs</a>
-				</li>
+				</li>		
+				
+								<li class="dropdown">
+		 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Logs
+		 				<span class="caret"></span></a>
+		 				<ul class="dropdown-menu">
+			 				<li><a  data-toggle="modal" data-target="#universalModal" id="searchBtn_logs" >Files</a></li>
+			 				<li><a  onclick = "accion();">Clean</a></li>
+		 			</ul>
+	 </li>
 			</ul>
 	</div>
 </nav>
