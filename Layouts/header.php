@@ -16,8 +16,9 @@ require_once('Clientes/metadata.php');
 		 				<span class="caret"></span></a>
 		 				<ul class="dropdown-menu">
 			 				<li> <a href="<?php echo $enlace_actual;?>/EICW/initAppn1.start()" target="_blank">EIC</a></li>
-			 				<li><a href="<?php echo $enlace_actual;?>/bmi/appn1.init()" target="_blank">BMI</a></li>
-							<li><a href="?menu=panel">Ins</a></li>
+			 				<!--li><a href="<?php echo $enlace_actual;?>/bmi/appn1.init()" target="_blank">BMI</a></li-->
+							<li><a href="?menu=panel">Panel</a></li>
+							<li><a href="javascript:myModal('<?php echo $enlace_actual;?>/emr/');">Add app to EMR</a></li>
 		 			</ul>
 	 </li>
 				</li>
@@ -30,7 +31,7 @@ require_once('Clientes/metadata.php');
 		 				<span class="caret"></span></a>
 		 				<ul class="dropdown-menu">
 			 				<li><a  data-toggle="modal" data-target="#universalModal" id="searchBtn_logs" >Files</a></li>
-			 				<li><a  onclick = "accion();">Clean</a></li>
+			 				<li><a  onclick = "accionLogs();">Clean</a></li>
 		 			</ul>
 	 </li>
 			</ul>
@@ -57,4 +58,20 @@ require_once('Clientes/metadata.php');
       </form>
     </div>
   </div>
+</div>
+
+<div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="width:1000px;" id='myModalDialog1' role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Estados</h4>
+			</div>
+			<div class="modal-body">				
+				<iframe id="modalContent1" frameborder="0" style="width: 100%; min-height: 30rem;"></iframe>
+			</div>
+		</div>
+	</div>
 </div>

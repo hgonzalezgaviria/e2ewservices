@@ -11,8 +11,10 @@ function myModal(urlApp) {
 		setTimeout(function() { $('#miModal').modal('show'); }, 500);
 }
 
-function accion()
+function accionLogs()
     {
+		var opcion = confirm("Esta seguro de limpiar los logs");
+		 if (opcion == true) {
         $.ajax({
             type:'POST', //aqui puede ser igual get
             url: 'Clientes/cleanlogs.php',//aqui va tu direccion donde esta tu funcion php
@@ -26,6 +28,9 @@ function accion()
 			//alert('NO-ok');
            }
          });
+		 } else {	
+	    //mensaje = "Has clickado Cancelar";
+	}
     }
 
 $(document).ready(function(){

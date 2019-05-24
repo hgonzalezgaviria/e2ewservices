@@ -66,7 +66,7 @@ cursor: default;
 	}?></td>
 	<td><a href="javascript:myModal('<?php echo $enlace_actual;?>/EICW/servlet/StateEIC');"><span data-toggle="tooltip" title="EICW STATUS" class="glyphicon glyphicon-link"></span></a>	</td>					
     </tr>
-    <tr>
+    <!--tr>
       <th scope="row"></th>
          <td>E2DI</td>
       <td><?php
@@ -122,11 +122,13 @@ cursor: default;
         echo "<img src='img/nok.png' border='0' width='20' height='20'>";
 	}?></td>
 	<td><a href="javascript:myModal('<?php echo $enlace_actual;?>/mBank/servlet/Status');"><span data-toggle="tooltip" title="mBank STATUS" class="glyphicon glyphicon-link"></span></a>	</td>	
-    </tr>
+    </tr-->
   </tbody>
 </table>
   </div>
+  
 </div>
+
 </div>
 
 
