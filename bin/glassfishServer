@@ -1,37 +1,44 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
-# Inicio de Imagen ec2
+# Start Server Glassfish
 
 
 case $1 in
 	start)
-		echo "See you again!"
+		#echo "See you again!"
 		echo "Iniciando Server..." > /u01/app/hbuser/product/e2ew/logs/service.log
-		date > /u01/app/hbuser/product/e2ew/logs/service.log
+		date >> /u01/app/hbuser/product/e2ew/logs/service.log
 		echo "carga variables" >> /u01/app/hbuser/product/e2ew/logs/service.log
 		source /etc/environment
 		source $HOME/.bash_profile
 		echo "update repo..." >> /u01/app/hbuser/product/e2ew/logs/service.log
 		cd ~/html/ && git pull
+		rsync -rtvu --delete /var/www/html/bin/ /u01/app/hbuser/admin/scripts/bin/		
 		echo "Clean Temp..." >> /u01/app/hbuser/product/e2ew/logs/service.log
 		cleanCacheGlassfish
 		echo "stop..." >> /u01/app/hbuser/product/e2ew/logs/service.log
 		stopGlassfishSever
 		echo "Actualizando dependencias glassfish" >> /u01/app/hbuser/product/e2ew/logs/service.log
-		/u01/app/hbuser/product/glassfish4/glassfish/bin/asadmin start-domain domain1
+		echo "AS_ADMIN_ALIASPASSWORD="$AS_ADMIN_ALIASPASSWORD > /u01/app/hbuser/product/glassfish4/glassfish/domains/domain1/config/initpass.txt
+		startGlassfishSever
 		/u01/app/hbuser/product/glassfish4/glassfish/bin/asadmin --port 4848 --host localhost  create-jvm-options -De2ewsecurity.db.useremr=$E2EWSECURITY_DB_USEREMR
 		/u01/app/hbuser/product/glassfish4/glassfish/bin/asadmin --port 4848 --host localhost  create-jvm-options -De2ewsecurity.db.userspi=$E2EWSECURITY_DB_USERSPI
 		/u01/app/hbuser/product/glassfish4/glassfish/bin/asadmin --port 4848 --host localhost  create-jvm-options -De2ewsecurity.db.usereic=$E2EWSECURITY_DB_USEREIC
 		/u01/app/hbuser/product/glassfish4/glassfish/bin/asadmin --port 4848 --host localhost  create-jvm-options -De2ewsecurity.db.url=$E2EWSECURITY_DB_URL
-		/u01/app/hbuser/product/glassfish4/glassfish/bin/asadmin stop-domain domain1
+		/u01/app/hbuser/product/glassfish4/glassfish/bin/asadmin --port 4848 --host localhost --passwordfile /u01/app/hbuser/product/glassfish4/glassfish/domains/domain1/config/initpass.txt create-password-alias dbpass		
+		stopGlassfishSever		
 		echo "Ahora si..!"
 		sed -i 's/enabled="false"//g' /u01/app/hbuser/product/glassfish4/glassfish/domains/domain1/config/domain.xml
 		startGlassfishSever
-		echo "server Iniciado." >> /u01/app/hbuser/product/e2ew/logs/service.log
+		sudo systemctl enable glassfish.service
+		echo "server Iniciado & Activado." >> /u01/app/hbuser/product/e2ew/logs/service.log
+		/u01/app/hbuser/product/glassfish4/glassfish/bin/asadmin --port 4848 --host localhost list-applications >> /u01/app/hbuser/product/e2ew/logs/service.log
 		statusGlassfishSever >> /u01/app/hbuser/product/e2ew/logs/service.log
+		true > /u01/app/hbuser/product/glassfish4/glassfish/domains/domain1/config/initpass.txt
 		;;
 	stop)
-		echo "See you again!"
+		#echo "See you again!"
+		echo "Opción de inicio del server invalida" > /u01/app/hbuser/product/e2ew/logs/service.log
 		break
 		;;
 	*)
