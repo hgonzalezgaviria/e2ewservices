@@ -15,6 +15,8 @@ case $1 in
 		VARIABLES=`cat /etc/environment`
 		if [ -z "$VARIABLES" ]
 		then
+			echo "Variables del sistemas vacias"
+		else
 			echo "update repo..." >> /u01/app/hbuser/product/e2ew/logs/service.log
 			cd ~/html/ && git pull
 			rsync -rtvu --delete /var/www/html/bin/ /u01/app/hbuser/admin/scripts/bin/
@@ -49,9 +51,7 @@ case $1 in
 			$pathGlassfish --port 4848 --host localhost  --user=admin --interactive=false  --passwordfile $pathPass list-applications >> /u01/app/hbuser/product/e2ew/logs/service.log
 			statusGlassfishSever >> /u01/app/hbuser/product/e2ew/logs/service.log
 			#true > /u01/app/hbuser/product/glassfish4/glassfish/domains/domain1/config/initpass.txt
-			sed -i '/AS_ADMIN_ALIASPASSWORD/d' $pathPass
-		else
-			echo "Variables del sistemas vacias"
+			sed -i '/AS_ADMIN_ALIASPASSWORD/d' $pathPass			
 		fi		
 		;;
 	stop)
