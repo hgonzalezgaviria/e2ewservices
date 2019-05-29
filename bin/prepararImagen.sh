@@ -21,6 +21,8 @@ stopGlassfishSever
 sudo service activemq stop
 sed -i 's/virtual-servers="server"/virtual-servers="server" enabled="false"/g' $pathGlassfishdomain
 sed -i '/-De2ewsecurity.db.url/d' $pathGlassfishdomain
+sed -i '/-De2ewsecurity.db.userbmi/d' $pathGlassfishdomain
+sed -i '/-De2ewsecurity.db.usere2f/d' $pathGlassfishdomain
 sed -i '/-De2ewsecurity.db.useremr/d' $pathGlassfishdomain
 sed -i '/-De2ewsecurity.db.userspi/d' $pathGlassfishdomain
 sed -i '/-De2ewsecurity.db.usereic/d' $pathGlassfishdomain
