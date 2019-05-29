@@ -16,7 +16,7 @@ require_once('Clientes/metadata.php');
 		 				<span class="caret"></span></a>
 		 				<ul class="dropdown-menu">
 			 				<li> <a href="<?php echo $enlace_actual;?>/EICW/initAppn1.start()" target="_blank">EIC</a></li>
-			 				<!--li><a href="<?php echo $enlace_actual;?>/bmi/appn1.init()" target="_blank">BMI</a></li-->
+			 				<li><a href="<?php echo $enlace_actual;?>/bmi/appn1.init()" target="_blank">BMI</a></li>
 							<li><a href="?menu=panel">Panel</a></li>
 							<li><a href="javascript:myModal('<?php echo $enlace_actual;?>/emr/');">Add app to EMR</a></li>
 		 			</ul>
