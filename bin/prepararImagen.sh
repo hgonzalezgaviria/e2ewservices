@@ -5,6 +5,7 @@ pathPass="/u01/app/hbuser/product/glassfish4/glassfish/config/inittask.txt"
 pathGlassfish="/u01/app/hbuser/product/glassfish4/glassfish/bin/asadmin"
 pathGlassfishdomain="/u01/app/hbuser/product/glassfish4/glassfish/domains/domain1/config/domain.xml"
 sudo systemctl disable glassfish.service
+sudo chkconfig activemq off
 source /etc/environment
 #/u01/app/hbuser/product/glassfish4/glassfish/bin/asadmin --port 4848 --host localhost  --user=admin --interactive=false  --passwordfile $pathPass disable emr
 #/u01/app/hbuser/product/glassfish4/glassfish/bin/asadmin --port 4848 --host localhost  --user=admin --interactive=false  --passwordfile $pathPass disable EICW
@@ -17,6 +18,7 @@ stopGlassfishSever
 cleanLogsAppE2ew
 cleanCacheGlassfish
 stopGlassfishSever
+sudo service activemq stop
 sed -i 's/virtual-servers="server"/virtual-servers="server" enabled="false"/g' $pathGlassfishdomain
 sed -i '/-De2ewsecurity.db.url/d' $pathGlassfishdomain
 sed -i '/-De2ewsecurity.db.useremr/d' $pathGlassfishdomain
