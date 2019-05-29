@@ -6,7 +6,7 @@ require_once('Clientes/metadata.php');
 		<div class="navbar-header">
 			<a class="navbar-brand" href="/">
 			<span class="glyphicon glyphicon-cloud" aria-hidden="true" ></span>
-			e2ew
+			e2ew Services
 			</a>
 		</div>
 			<ul class="nav navbar-nav">
@@ -17,13 +17,14 @@ require_once('Clientes/metadata.php');
 		 				<ul class="dropdown-menu">
 			 				<li> <a href="<?php echo $enlace_actual;?>/EICW/initAppn1.start()" target="_blank">EIC</a></li>
 			 				<li><a href="<?php echo $enlace_actual;?>/bmi/appn1.init()" target="_blank">BMI</a></li>
-							<li><a href="?menu=panel">Panel</a></li>
+							<!--li><a href="?menu=panel">Estados</a></li-->
 							<li><a href="javascript:myModal('<?php echo $enlace_actual;?>/emr/');">Add app to EMR</a></li>
 		 			</ul>
 	 </li>
 				</li>
 				<li>
-					<a href="?menu=mostrar">Ver Estados</a>
+					<!--a href="?menu=mostrar">Ver Estados</a-->
+					<a href="?menu=panel">Estados</a>
 				</li>		
 				
 								<li class="dropdown">
