@@ -4,7 +4,7 @@ require_once('Clientes/metadata.php');
 <nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="/">
+			<a class="navbar-brand" href="/services/">
 			<span class="glyphicon glyphicon-cloud" aria-hidden="true" ></span>
 			e2ew Services
 			</a>
